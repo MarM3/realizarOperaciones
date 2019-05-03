@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Realizar operaciones</title>
+		<style>
+			#suma, #resta, #multiplicacion, #division {
+				display: inline-block;
+				border: 2px solid black;
+				text-align: center;
+				width: 24%;
+				height: 250px;
+			}
+
+			h1 {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Realiza las operaciones</h1>
+		<div id="suma">
+			<p id="n1suma">Número 1</p>
+			<p>+</p>
+			<p id="n2suma">Número 2</p>
+			<p>=</p>
+			<p id="solucionsuma">?</p>
+			<button onclick="suma();">Sumar</button>
+		</div>
+		<div id="resta">
+			<p id="n1resta">Número 1</p>
+			<p>-</p>
+			<p id="n2resta">Número 2</p>
+			<p>=</p>
+			<p id="solucionresta">?</p>
+			<button onclick="resta();">Restar</button>
+		</div>
+		<div id="multiplicacion">
+			<p id="n1multiplicacion">Número 1</p>
+			<p>*</p>
+			<p id="n2multiplicacion">Número 2</p>
+			<p>=</p>
+			<p id="solucionmultiplicacion">?</p>
+			<button onclick="multiplicacion();">Multiplicar</button>
+		</div>
+		<div id="division">
+			<p id="n1division">Número 1</p>
+			<p>/</p>
+			<p id="n2division">Número 2</p>
+			<p>=</p>
+			<p id="soluciondivision">?</p>
+			<button onclick="division();">Dividir</button>
+		</div>
+		<script src="js/funciones.js"></script>
+	</body>
+</html>
