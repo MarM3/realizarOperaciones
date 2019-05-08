@@ -78,7 +78,7 @@ function dividir(){
     let n1division = parseFloat(prompt("Introduzca el primer operando: "));
     validar(n1division);
 
-    let n2multiplicacion = parseFloat(prompt("Introduzca el segundo operando: "));
+    let n2division = parseFloat(prompt("Introduzca el segundo operando: "));
     validar(n2division);
 
     let ope1 = new Operacion(n1division, n2division);
