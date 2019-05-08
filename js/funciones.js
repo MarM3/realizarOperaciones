@@ -16,27 +16,84 @@
 function Operacion (parN1, parN2){
     this.n1 = parN1;
     this.n2 = parN2;
-    this.n1 = prompt("Introduzca el primer operando: ");
-    validar(this.n1);
-    this.n2 = prompt("Introduzca el segundo operando: ");
-    validar(this.n2);
+    this.res = 0;
     this.suma = function(){
-        let parRes = parseInt(this.n1) + parseInt(this.n2);
-        return this.n1, this.n2, parRes;
-    }
+        this.res = parseInt(this.n1) + parseInt(this.n2);
+        //return this.res;
+    };
+    this.resta = function(){
+        this.res = parseInt(this.n1) - parseInt(this.n2);
+        //return this.res;
+    };
+    this.multiplicacion = function(){
+        this.res = parseInt(this.n1) * parseInt(this.n2);
+       // return this.res;
+    };
+    this.division = function(){
+        this.res = parseInt(this.n1) / parseInt(this.n2);
+        //return this.res;
+    };
 }
+
 function sumar(){
-    let n1suma;
-    let n2suma;
+    let n1suma = parseFloat(prompt("Introduzca el primer operando: "));
+    validar(n1suma);
 
-    let solucionsuma = new Operacion(n1suma, n2suma);
-    solucionsuma.suma();
-    document.getElementById("n1suma").innerHTML = n1suma;
-    document.getElementById("n2suma").innerHTML = n2suma;
-    document.getElementById("solucionsuma").innerHTML = solucionsuma;
+    let n2suma = parseFloat(prompt("Introduzca el segundo operando: "));
+    validar(n2suma);
+
+    let ope1 = new Operacion(n1suma, n2suma);
+
+    ope1.suma();
+    resultados("n1suma", "n2suma", "solucionsuma", ope1);
 }
 
-function resta() {
+function restar(){
+    let n1resta = parseFloat(prompt("Introduzca el primer operando: "));
+    validar(n1resta);
+
+    let n2resta = parseFloat(prompt("Introduzca el segundo operando: "));
+    validar(n2resta);
+
+    let ope1 = new Operacion(n1resta, n2resta);
+
+    ope1.resta();
+    resultados("n1resta", "n2resta", "solucionresta", ope1);
+}
+
+function multiplicar(){
+    let n1multiplicacion = parseFloat(prompt("Introduzca el primer operando: "));
+    validar(n1multiplicacion);
+
+    let n2multiplicacion = parseFloat(prompt("Introduzca el segundo operando: "));
+    validar(n2multiplicacion);
+
+    let ope1 = new Operacion(n1multiplicacion, n2multiplicacion);
+
+    ope1.multiplicacion();
+    resultados("n1multiplicacion", "n2multiplicacion", "solucionmultiplicacion", ope1);
+}
+
+function dividir(){
+    let n1division = parseFloat(prompt("Introduzca el primer operando: "));
+    validar(n1division);
+
+    let n2multiplicacion = parseFloat(prompt("Introduzca el segundo operando: "));
+    validar(n2division);
+
+    let ope1 = new Operacion(n1division, n2division);
+
+    ope1.division();
+    resultados("n1division", "n2division", "soluciondivision", ope1);
+}
+
+function resultados (n1, n2, res, obj){
+    document.getElementById(n1).innerHTML = obj.n1;
+    document.getElementById(n2).innerHTML = obj.n2;
+    document.getElementById(res).innerHTML = obj.res;
+}
+
+/*function resta() {
     let n1resta = prompt("Introduzca el primer operando: ");
     let n2resta = prompt("Introduzca el segundo operando: ");
 
@@ -79,11 +136,13 @@ function division() {
         document.getElementById("n2division").innerHTML = n2division;
         document.getElementById("soluciondivision").innerHTML = soluciondivision;
 }
-
+*/
 function validar (operando){
-    let patron = /^[+-]?[0-9]{1,9}(?:,[0-9]{1,9})?$/; //otro patron a usar /[+-]?\d+(.\d+)?$/
-    while (!isNaN(operando) && !patron.test(operando)){
-        operando1 = prompt("Vuelve a introducir el operando: ");
+    let patron = /^[+-]?\d+(.\d+)?$/; //otro patron a usar /^[+-]?[0-9]{1,9}(?:,[0-9]{1,9})?$/
+    //let operando1;
+
+    while (!isNaN(operando) || patron.test(operando)){
+        operando = prompt("Vuelve a introducir el operando: ");
     }
 
     return operando;
