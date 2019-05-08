@@ -141,7 +141,7 @@ function validar (operando){
     let patron = /^[+-]?\d+(.\d+)?$/; //otro patron a usar /^[+-]?[0-9]{1,9}(?:,[0-9]{1,9})?$/
     //let operando1;
 
-    while (!isNaN(operando) || patron.test(operando)){
+    while (isNaN(operando) || !patron.test(operando)){
         operando = prompt("Vuelve a introducir el operando: ");
     }
 
